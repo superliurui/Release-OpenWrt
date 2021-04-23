@@ -35,6 +35,14 @@ on:
   watch:
 #    types: started
 
+on:
+  repository_dispatch:
+  workflow_dispatch:
+    inputs:
+      ssh:
+        description: 'SSH connection to Actions'
+        required: true
+        default: 'false'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede 
@@ -97,9 +105,9 @@ jobs:
         [ -e files ] && mv files openwrt/files
         [ -e $CONFIG_FILE ] && mv $CONFIG_FILE openwrt/.config
 
-    - name: SSH远程连接服务器配置固件
-      uses: P3TERX/debugger-action@main
-      if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
+    #- name: SSH远程连接服务器配置固件
+    #  uses: P3TERX/debugger-action@main
+    #  if: env.SSH_ACTIONS == 'true' || contains(github.event.action, 'ssh')
 
     - name: 下载软件包
       id: package

@@ -8,7 +8,7 @@
 #修改以下代码或者开启触发开关都好，要严格按格式对好,前面有多少空格也要看清楚
 #
 
-name: Lede-OpenWrt固件
+#name: Lede-OpenWrt固件
 
 #on:
 #  repository_dispatch:
@@ -32,8 +32,10 @@ name: Lede-OpenWrt固件
 
 
 #点☆Star触发开始编译
-  watch:
+#  watch:
 #    types: started
+
+name: Build OpenWrt
 
 on:
   repository_dispatch:
@@ -41,8 +43,8 @@ on:
     inputs:
       ssh:
         description: 'SSH connection to Actions'
-        required: true
-        default: 'false'
+        required: false
+        default: 'true'
 
 env:
   REPO_URL: https://github.com/coolsnowwolf/lede 

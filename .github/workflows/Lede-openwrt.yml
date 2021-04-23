@@ -8,7 +8,7 @@
 #修改以下代码或者开启触发开关都好，要严格按格式对好,前面有多少空格也要看清楚
 #
 
-name: Lede-OpenWrt 固件
+name: Lede-OpenWrt-x86_64固件
 
 on:
   repository_dispatch:
@@ -148,16 +148,16 @@ jobs:
         name: OpenWrt_Lede${{ env.DEVICE_NAME }}${{ env.FILE_DATE }}
         path: ${{ env.FIRMWARE }}
 
-    - name: 上传固件到cowtransfer网盘
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
-      run: |
-        curl -fsSL git.io/file-transfer | sh
-        ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
-        echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
+    #- name: 上传固件到cowtransfer网盘
+    #  if: steps.organize.outputs.status == 'success' && env.UPLOAD_COWTRANSFER == 'true' && !cancelled()
+    #  run: |
+    #    curl -fsSL git.io/file-transfer | sh
+    #    ./transfer cow --block 2621440 -s -p 64 --no-progress ${FIRMWARE} 2>&1 | tee cowtransfer.log
+    #    echo "::warning file=cowtransfer.com::$(cat cowtransfer.log | grep https)"
 
-    - name: 上传固件到WeTransfer网盘
-      if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
-      run: |
-        curl -fsSL git.io/file-transfer | sh
-        ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
-        echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"
+    #- name: 上传固件到WeTransfer网盘
+    #  if: steps.organize.outputs.status == 'success' && env.UPLOAD_WETRANSFER == 'true' && !cancelled()
+    #  run: |
+    #    curl -fsSL git.io/file-transfer | sh
+    #    ./transfer wet -s -p 16 --no-progress ${FIRMWARE} 2>&1 | tee wetransfer.log
+    #    echo "::warning file=wetransfer.com::$(cat wetransfer.log | grep https)"

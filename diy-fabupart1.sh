@@ -27,6 +27,7 @@ git clone https://github.com/fw876/helloworld.git package/hellowrold
 #git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 git clone https://github.com/kenzok8/openwrt-packages.git package/kenzo
 git clone https://github.com/jiawm/luci-app-poweroff.git package/poweroff
+git clone https://github.com/linkease/nas-packages.git package/nas #添加ddnsto和linkease
 
 rm -rf ./package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon  #删除自带argon主题，安装新的argon主题
 #全新的[argon-主题]此主题玩法很多,这里看说明【https://github.com/jerrykuku/luci-theme-argon/blob/18.06/README_ZH.md】

@@ -23,8 +23,9 @@ sed -i 's/^#\(.*helloworld\)/\1/' feeds.conf.default  #使用源码自带ShadowS
 #sed -i '$a src-git kenzo https://github.com/kenzok8/openwrt-packages
 
 git clone https://github.com/xiaorouji/openwrt-passwall.git package/lienol
-git clone https://github.com/fw876/helloworld.git package/hellowrold
+#git clone https://github.com/fw876/helloworld.git package/hellowrold
 git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
+git clone https://github.com/linkease/nas-packages.git package/nas #添加ddnsto和linkease
 #git clone https://github.com/kenzok8/openwrt-packages.git package/kenzo
 #git clone https://github.com/jiawm/luci-app-poweroff.git package/poweroff
 

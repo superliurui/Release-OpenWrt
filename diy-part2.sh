@@ -13,5 +13,5 @@
 sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generate
 
 #修改cpu限制为管控模式下
-sed -i 's/system/control/g' package/sirpdboy-package/blob/main/luci-app-cpulimit/luasrc/controller/cpulimit.lua
+sed -i 's/system/control/g' packages/sirpdboy-package/blob/main/luci-app-cpulimit/luasrc/controller/cpulimit.lua
 

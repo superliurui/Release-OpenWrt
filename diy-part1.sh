@@ -28,4 +28,6 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 git clone https://github.com/sirpdboy/luci-app-netdata cp -r luci-app-netdata LEDE_DIR/package/luci-app-netdata
 
 
+rm -rf ./package/lean/luci-app-netdata && git clone https://github.com/sirpdboy/luci-app-netdata.git package/lean/luci-app-netdata
+
 

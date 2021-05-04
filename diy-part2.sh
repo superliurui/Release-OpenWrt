@@ -14,4 +14,9 @@ sed -i 's/192.168.1.1/192.168.2.1/g' package/base-files/files/bin/config_generat
 
 #修改cpu限制为管控模式下
 sed -i 's/system/control/g' package/sirpdboy-package/luci-app-cpulimit/luasrc/controller/cpulimit.lua
-
+#修改定时设置为管控模式下
+sed -i 's/system/control/g' package/sirpdboy-package/luci-app-autotimeset/luasrc/controller/autotimeset.lua
+#修改IP限速（eqos）为管控模式下
+sed -i 's/network/control/g' package/sirpdboy-package/luci-app-autotimeset/luasrc/controller/autotimeset.lua
+#修改网络唤醒为管控模式下
+sed -i 's/Network/control/g' package/lean/wol/Makefile

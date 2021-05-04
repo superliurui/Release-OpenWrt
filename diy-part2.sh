@@ -19,4 +19,6 @@ sed -i 's/system/control/g' package/sirpdboy-package/luci-app-autotimeset/luasrc
 #修改IP限速（eqos）为管控模式下
 sed -i 's/network/control/g' package/sirpdboy-package/luci-app-autotimeset/luasrc/controller/autotimeset.lua
 #修改网络唤醒为管控模式下
-sed -i 's/Network/control/g' package/lean/wol/Makefile
+sed -i 's/services/control/g' luci/applications/luci-app-wol/luasrc/controller/wol.lua 
+#修改磁盘休眠为管控模式下
+sed -i 's/services/control/g' luci/applications/luci-app-hd-idle/luasrc/controller/hd_idle.lua 

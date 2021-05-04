@@ -21,4 +21,4 @@ sed -i 's/network/control/g' package/sirpdboy-package/luci-app-autotimeset/luasr
 #修改网络唤醒为管控模式下
 sed -i 's/services/control/g' feeds/luci/applications/luci-app-wol/luasrc/controller/wol.lua 
 #修改磁盘休眠为管控模式下
-sed -i 's/services/control/g' feeds/luci/applications//luci-app-hd-idle/luasrc/controller/hd_idle.lua 
+sed -i 's/services/control/g' feeds/luci/applications/luci-app-hd-idle/luasrc/controller/hd_idle.lua 

@@ -31,3 +31,5 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 
 
 rm -rf ./package/lean/luci-app-netdata && git clone https://github.com/sirpdboy/luci-app-netdata.git package/lean/luci-app-netdata
+
+rm -rf ./package/lean/qBittorrent

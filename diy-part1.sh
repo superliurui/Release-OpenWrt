@@ -25,8 +25,8 @@ git clone https://github.com/siropboy/sirpdboy-package package/sirpdboy-package
 git clone https://github.com/linkease/nas-packages.git package/nas #添加ddnsto和linkease
 git clone https://github.com/sirpdboy/luci-app-autotimeset package/luci-app-autotimeset #添加sirpdboy定时设置
 git clone https://github.com/jiawm/luci-app-poweroff.git package/poweroff
-git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
-#git clone https://github.com/kenzok8/openwrt-packages.git package/kenzo
+#git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan #最新，添加#
+git clone https://github.com/kenzok8/openwrt-packages.git package/kenzo #最新 删除#
 
 #替换为sirpdboy中文版netdata
 rm -rf ./package/lean/luci-app-netdata && git clone https://github.com/sirpdboy/luci-app-netdata.git package/lean/luci-app-netdata
@@ -39,6 +39,8 @@ rm -rf ./package/sirpdboy-package/luci-theme-opentopd
 rm -rf ./package/sirpdboy-package/luci-theme-argon_new
 rm -rf ./package/sirpdboy-package/luci-app-autotimeset
 rm -rf ./package/sirpdboy-package/luci-app-advanced
+rm -rf ./package/sirpdboy-package/luci-app-ddnso #最新添加
+
 
 
 

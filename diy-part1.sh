@@ -31,4 +31,14 @@ git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 #替换为sirpdboy中文版netdata
 rm -rf ./package/lean/luci-app-netdata && git clone https://github.com/sirpdboy/luci-app-netdata.git package/lean/luci-app-netdata
 #与sirpdboy包编译lean qbittorrent出错，只能删除，使用sirpdboy自带qbittorrent
-rm -rf ./package/lean/qBittorrent
+
+#删除软件包
+rm -rf ./package/sirpdboy-package/qBittorrent
+rm -rf ./package/sirpdboy-package/qt5
+rm -rf ./package/sirpdboy-package/luci-theme-opentopd
+rm -rf ./package/sirpdboy-package/luci-theme-argon_new
+rm -rf ./package/sirpdboy-package/luci-app-autotimeset
+rm -rf ./package/sirpdboy-package/luci-app-advanced
+
+
+

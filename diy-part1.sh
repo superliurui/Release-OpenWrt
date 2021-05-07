@@ -28,7 +28,7 @@ git clone https://github.com/jiawm/luci-app-poweroff.git package/poweroff
 git clone https://github.com/tty228/luci-app-serverchan.git package/serverchan
 #git clone https://github.com/kenzok8/openwrt-packages.git package/kenzo
 
-
+#替换为sirpdboy中文版netdata
 rm -rf ./package/lean/luci-app-netdata && git clone https://github.com/sirpdboy/luci-app-netdata.git package/lean/luci-app-netdata
-
+#与sirpdboy包编译lean qbittorrent出错，只能删除，使用sirpdboy自带qbittorrent
 rm -rf ./package/lean/qBittorrent

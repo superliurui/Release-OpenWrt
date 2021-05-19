@@ -125,8 +125,9 @@ chmod -R 755 ./package/luci-app-socat/*
 # chmod -R 755 ./package/luci-app-smartdns
 
 # Add Poweroff
+git clone https://github.com/jiawm/luci-app-poweroff.git package/poweroff
 # git clone https://github.com/xylz0928/luci-app-shutdown package/luci-app-shutdown
-git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff
+#git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-poweroff #这个是默认
 # curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/poweroff.htm > ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm 
 # curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 # chmod -R 755 ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
@@ -135,3 +136,6 @@ git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-p
 
 # Add ddnsto and linkease
 git clone https://github.com/linkease/nas-packages.git package/nas #添加ddnsto和linkease
+
+#替换为sirpdboy中文版netdata
+rm -rf ./package/lean/luci-app-netdata && git clone https://github.com/sirpdboy/luci-app-netdata.git package/lean/luci-app-netdata

@@ -131,3 +131,7 @@ git clone https://github.com/esirplayground/luci-app-poweroff package/luci-app-p
 # curl -fsSL  https://raw.githubusercontent.com/siropboy/other/master/patch/poweroff/system.lua > ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 # chmod -R 755 ./feeds/luci/modules/luci-mod-admin-full/luasrc/controller/admin/system.lua
 # chmod -R 755 ./feeds/luci/modules/luci-mod-admin-full/luasrc/view/admin_system/poweroff.htm
+
+
+# Add ddnsto and linkease
+git clone https://github.com/linkease/nas-packages.git package/nas #添加ddnsto和linkease

@@ -22,10 +22,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git ./package/l
 git clone https://github.com/jerrykuku/luci-app-argon-config.git ./package/luci-app-argon-config
 
 # Change default BackGround img
-# rm ./package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg
-wget -O ./package/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg https://github.com/xylz0928/Openwrt-Make-x86_7621/raw/main/BigSurLight.jpg
-#svn co https://github.com/xylz0928/luci-mod/trunk/feeds/luci/modules/luci-base/htdocs/luci-static/resources/icons ./package/lucimod
-#mv package/lucimod/* feeds/luci/modules/luci-base/htdocs/luci-static/resources/icons/
+wget -O ./package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg https://github.com/jiawm/My-OpenWrt-by-Lean/raw/main/BackGround/1.jpg
 
 # Change default theme
 sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
@@ -68,20 +65,20 @@ git clone https://github.com/jerrykuku/luci-app-vssr.git package/lean/luci-app-v
 
 # Add Passwall
 git clone https://github.com/xiaorouji/openwrt-passwall package/openwrt-passwall
-rm -rf ./package/lean/dns2socks
-rm -rf ./package/lean/ipt2socks
-rm -rf ./package/lean/kcptun
-rm -rf ./package/lean/microsocks
-rm -rf ./package/lean/shadowsocksr-libev
-rm -rf ./package/lean/simple-obfs
-rm -rf ./package/lean/tcping
-rm -rf ./package/lean/trojan
+#rm -rf ./package/lean/dns2socks
+#rm -rf ./package/lean/ipt2socks
+#rm -rf ./package/lean/kcptun
+#rm -rf ./package/lean/microsocks
+#rm -rf ./package/lean/shadowsocksr-libev
+#rm -rf ./package/lean/simple-obfs
+#rm -rf ./package/lean/tcping
+#rm -rf ./package/lean/trojan
 # rm -rf ./package/lean/v2ray
-rm -rf ./package/lean/v2ray-plugin
-rm -rf ./package/openwrt-passwall/naiveproxy
-rm -rf ./package/openwrt-passwall/tcping
-rm -rf ./package/openwrt-passwall/xray-core
-rm -rf ./package/openwrt-passwall/v2ray
+#rm -rf ./package/lean/v2ray-plugin
+#rm -rf ./package/openwrt-passwall/naiveproxy
+#rm -rf ./package/openwrt-passwall/tcping
+#rm -rf ./package/openwrt-passwall/xray-core
+#rm -rf ./package/openwrt-passwall/v2ray
 # rm -rf ./package/openwrt-passwall/v2ray-plugin
 # rm -rf ./feeds/helloworld/naiveproxy
 # rm -rf ./feeds/helloworld/tcping

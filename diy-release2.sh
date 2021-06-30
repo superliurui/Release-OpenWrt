@@ -22,7 +22,7 @@ git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git ./package/l
 git clone https://github.com/jerrykuku/luci-app-argon-config.git ./package/luci-app-argon-config
 
 # Change default BackGround img
-wget -O ./package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg https://github.com/jiawm/My-OpenWrt-by-Lean/raw/main/BackGround/1.jpg
+wget -O ./package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg https://github.com/jiawm/My-OpenWrt-by-Lean/raw/main/BackGround/2.jpg
 
 # Change default theme
 sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
@@ -93,7 +93,6 @@ git clone -b master https://github.com/vernesong/OpenClash.git package/OpenClash
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-adguardhome ./package/luci-app-adguardhome
 chmod -R 755 ./package/luci-app-adguardhome/*
 svn co https://github.com/sirpdboy/sirpdboy-package/trunk/adguardhome ./package/adguardhome
-sed -i 's/        /	/g' ./package/adguardhome/Makefile
 chmod -R 755 ./package/adguardhome/*
 
 # Add WOL Plus

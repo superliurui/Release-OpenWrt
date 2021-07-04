@@ -17,8 +17,8 @@ modelmark=R`TZ=UTC-8 date +%Y-%m-%d -d +"0"days`' by JIA'
 sed -i "s/DISTRIB_REVISION='R[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*/DISTRIB_REVISION='$modelmark/g" ./package/lean/default-settings/files/zzz-default-settings
 
 # Change Argon Theme
-rm -rf ./package/lean/luci-theme-argon  
-git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git ./package/luci-theme-argon
+#删除lean大集成的旧版argon主题，更换为新版argon主题
+rm -rf ./package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon  
 git clone https://github.com/jerrykuku/luci-app-argon-config.git ./package/luci-app-argon-config
 
 # Change default BackGround img

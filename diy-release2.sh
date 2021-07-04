@@ -14,7 +14,7 @@ sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.t
 
 # 修改版本号-webui
 modelmark=R`TZ=UTC-8 date +%Y-%m-%d -d +"0"days`' by JIA'
-sed -i "s/DISTRIB_REVISION='R[0-9]*\.[0-9]*\.[0-9]*/DISTRIB_REVISION='$modelmark/g" ./package/lean/default-settings/files/zzz-default-settings
+sed -i "s/DISTRIB_REVISION='R[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*/DISTRIB_REVISION='$modelmark/g" ./package/lean/default-settings/files/zzz-default-settings
 
 # Change Argon Theme
 rm -rf ./package/lean/luci-theme-argon  
@@ -114,11 +114,11 @@ chmod -R 755 ./package/luci-app-socat/*
 
 
 # Add SmartDNS
-# rm -rf ./feeds/packages/net/smartdns
-# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-smartdns ./package/luci-app-smartdns
-# svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/smartdns
-# chmod -R 755 ./package/smartdns
-# chmod -R 755 ./package/luci-app-smartdns
+rm -rf ./feeds/packages/net/smartdns
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/luci-app-smartdns ./package/luci-app-smartdns
+svn co https://github.com/sirpdboy/sirpdboy-package/trunk/smartdns ./package/smartdns
+chmod -R 755 ./package/smartdns
+chmod -R 755 ./package/luci-app-smartdns
 
 # Add Poweroff
 git clone https://github.com/jiawm/luci-app-poweroff.git package/poweroff

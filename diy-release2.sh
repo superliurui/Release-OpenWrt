@@ -10,10 +10,10 @@
 # Description: OpenWrt DIY script part 2 (After Update feeds)
 
 # 切换ramips内核为 5.10
-# sed -i 's/5.4/5.10/g' ./target/linux/ramips/Makefile
+sed -i 's/5.4/5.10/g' ./target/linux/ramips/Makefile
 
 # 切换x86内核为 5.10
-# sed -i 's/5.4/5.10/g' ./target/linux/x86/Makefile
+sed -i 's/5.4/5.10/g' ./target/linux/x86/Makefile
 
 # 修复核心及添加温度显示
 sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.template
@@ -22,16 +22,19 @@ sed -i 's/invalid/# invalid/g' package/network/services/samba36/files/smb.conf.t
 modelmark=R`TZ=UTC-8 date +%Y-%m-%d -d +"0"days`' by JIA'
 sed -i "s/DISTRIB_REVISION='R[0-9]*\.[0-9]*\.[0-9]*\.[0-9]*/DISTRIB_REVISION='$modelmark/g" ./package/lean/default-settings/files/zzz-default-settings
 
-# Change Argon Theme
-#删除lean大集成的旧版argon主题，更换为新版argon主题
-rm -rf ./package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon  
-git clone https://github.com/jerrykuku/luci-app-argon-config.git ./package/luci-app-argon-config
+#添加主题
+git clone https://github.com/sirpdboy/luci-theme-opentopd package/luci-theme-opentopd
+
+#更换默认主题为opentopd，并删除bootstrap主题
+sed -i 's#luci-theme-bootstrap#luci-theme-opentopd#g' feeds/luci/collections/luci/Makefile
+sed -i 's/bootstrap/opentopd/g' feeds/luci/modules/luci-base/root/etc/config/luci
+
+#删除lean大集成的旧版argon主题，更换为新版argon主题#Change Argon Theme
+rm -rf ./package/lean/luci-theme-argon && git clone -b 18.06 https://github.com/jerrykuku/luci-theme-argon.git package/lean/luci-theme-argon
+
 
 # Change default BackGround img
 wget -O ./package/lean/luci-theme-argon/htdocs/luci-static/argon/img/bg1.jpg https://github.com/jiawm/My-OpenWrt-by-Lean/raw/main/BackGround/2.jpg
-
-# Change default theme
-sed -i 's/bootstrap/argon/g' feeds/luci/collections/luci/Makefile
 
 # Remove the default apps
 sed -i 's/luci-app-zerotier //g' target/linux/x86/Makefile
